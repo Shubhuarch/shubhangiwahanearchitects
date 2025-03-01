@@ -8,6 +8,7 @@ import { IoClose } from "react-icons/io5";
 
 import CompletedProject from "./CompletedProject";
 import Footer from "../Components/Footer";
+import FeatureWork from "./featured";
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBoxOpen, setIsBoxOpen] = useState(true);
@@ -27,7 +28,10 @@ const Home = () => {
       <DataPage />
       <CompletedProject />
       <HowItWorks />
+      
       <div className="h-[20vh]"></div>
+
+      {/* <FeatureWork /> */}
       {/* <button 
         className='bg-gray-400 p-4 rounded-lg mt-2'
         onClick={toggleModal}
@@ -35,9 +39,9 @@ const Home = () => {
         Book Whatever You want
       </button> */}
 
-      <Footer />
+      {/* <Footer /> */}
 
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-4 rounded-lg w-3/4 h-3/4 relative">
             <button
@@ -67,7 +71,7 @@ const Home = () => {
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

@@ -1,14 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Modal from 'react-modal';
-import Home from './Pages/Home';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Navbar from './Components/Navbar';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
-import Chat from './Components/Chat';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Modal from "react-modal";
+import Home from "./Pages/Home";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./Components/Navbar";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Chat from "./Components/Chat";
+import Work from "./Pages/Work";
+import Team from "./Pages/Team";
 
 function App() {
   return (
@@ -25,18 +27,32 @@ function App() {
         pauseOnHover
         theme="light"
       />
-    <div className="App">
-      <Navbar />
-      <div className="mt-[15vh] w-full"> 
-        <Routes>
-          <Route path="/*" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <div className="w-full flex justify-center ">
+        <div className="App flex w-[80%] justify-center">
+          {/* Sidebar / Navbar with fixed width */}
+          <div className="w-[20%]">
+            <Navbar />
+          </div>
+
+          {/* Main Content Area (flex-grow to take remaining space) */}
+          <div className=" flex flex-grow w-[50%] flex-col">
+            <div className="w-full">
+              {/* Uncomment Routes when needed */}
+              <Routes>
+                <Route path="/*" element={<Home />} />
+                <Route path="/about-us" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/work" element={<Work />} />
+                <Route path="/team" element={<Team />} />
+              </Routes>
+            </div>
+          </div>
+
+          {/* Chat Component */}
+          <Chat />
+        </div>
       </div>
-      <Chat/>
-    </div>
-  </Router>
+    </Router>
   );
 }
 

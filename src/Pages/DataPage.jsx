@@ -12,32 +12,53 @@ const DataPage = () => {
         often come with interior design? <br /> Hipcouch is here to change that.
         We go the extra mile to give you a service that’s delightfully smooth.
       </div>
-
+      {/* OLD design */}
       <div className="hidden md:flex flex-wrap justify-evenly  mt-[6vh] w-full ">
         {data.map((info, i) => (
           <div className="hidden md:flex flex-col w-[25%] md:w-[18%] mt-2 ">
-            <div className="w-[full] h-[10vh] md:h-[30vh] bg-red-300 m-2">
+            <div className="w-[full] h-[10vh] md:h-[20vh] bg-red-300 m-2">
               <img src={info.img} className="h-full w-full" />
             </div>
             <div className=" md:mt-[6vh] text-[0.7rem] text-[#584039] md:text-[1.2rem]">
               {info.title}
             </div>
-            <div className='mt-[4vh]  text-black text-[1rem]'>
-                        {info.info}
-                    </div>
+            <div className="mt-[4vh]  text-black text-[1rem]">{info.info}</div>
           </div>
         ))}
       </div>
 
-{/* mobile view */}
+      <h1>New Design</h1>
+      <div className="hidden md:flex flex-wrap justify-evenly mt-[6vh] w-full">
+  {data.map((info, i) => (
+    <div 
+      key={i} 
+      className={`flex h-[40vh] justify-evenly w-full mt-2 ${i % 2 !== 0 ? 'flex-row-reverse' : ''}`}
+    >
+      <div className="w-[30%] h-full">
+        <div className="w-full h-[80%] bg-red-300 m-2">
+          <img src={info.img} className="h-full w-full" alt={info.title} />
+        </div>
+        <div className="w-full text-[1.2rem]">
+          {info.title}
+        </div>
+      </div>
+      <div className="mt-[4vh] w-[65%] text-black text-[1rem]">
+        {info.info}
+      </div>
+    </div>
+  ))}
+</div>
+
+      {/* mobile view */}
       <div className="md:hidden flex  flex-wrap justify-evenly mt-[6vh] w-full">
         {data.map((info, i) => (
-          <div
-            className={`flex flex-col items-center m-2 w-full `}
-            key={i}
-          >
+          <div className={`flex flex-col items-center m-2 w-full `} key={i}>
             <div className="w-full p-2 h-[50vh] md:h-[30vh] m-2">
-              <img src={info.img} className='w-full h-full object-cover drop-shadow-2xl' alt={info.title} />
+              <img
+                src={info.img}
+                className="w-full h-full object-cover drop-shadow-2xl"
+                alt={info.title}
+              />
             </div>
             <div className="w-full flex flex-col items-center justify-center">
               <div className="mt-4 text-[0.7rem] text-[#584039] md:text-[0.7rem]">

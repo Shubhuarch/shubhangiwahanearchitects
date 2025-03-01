@@ -8,14 +8,14 @@ const HowItWorks = () => {
         <div  className=" flex flex-col md:flex-row  w-full md:justify-center mt-[4vh] items-center">
         {howWork.map((info,i)=>(
             <div key={i} className="text-center flex flex-col items-center w-[80%] md:w-[20%] m-2 ">
-                <div className=' md:w-[30%] h-[12vh]  '>
+                <div className=' md:w-[30%] h-[8vh]  '>
                     <img src={info.loggo} className='h-full w-full' alt="" />
                 </div>
 
                 <div className='mt-3'>
                     {info.heading}
                 </div>
-                <div className='mt-4'>
+                <div className='mt-4 text-[0.7rem]'>
                     {info.text}
                 </div>
             </div>

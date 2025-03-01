@@ -50,12 +50,13 @@ const Slidebar = () => {
         </div>
       ))}
       <div className=" absolute inset-0 md:flex w-full h-full justify-end items-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className=" hidden md:flex justify-center w-[65%] h-full p-4 text-white items-center">
-          <div className="flex flex-col items-center space-y-4 bg-[#998975]  bg-opacity-50 p-6 h-fit rounded-lg">
-            <p className="text-2xl font-bold">WELCOME TO COMPANY NAME</p>
+        <div className=" hidden md:flex justify-center w-[75%] h-full p-4 text-white items-center">
+          <div className="flex flex-col items-center space-y-4 w-[70%] bg-[#998975]  bg-opacity-50 p-6 h-fit rounded-lg">
+            <p className="text-2xl font-bold">WELCOME TO </p>
+            <p className="text-2xl font-bold">SHUBHANGI WAHANE ARCHITECTS</p>
             <p className="text-xl">The Studio of Enthusiasm</p>
             <div className="text-center">
-              <p>We at Company Name</p>
+              <p>We Will</p>
               <p>Help you</p>
               <p>To build a better future</p>
             </div>

@@ -24,3 +24,25 @@ export const data = [
     info: "We also offer 'design-only' solutions, work with your contractors & materials and oversee execution, for suitable projects.",
   },
 ];
+
+export const work=[
+  {
+    id:'1',
+    tile_image:'',
+    tile_text:'',
+    main_image:'',
+    location:'',
+    date:{
+      date:'',
+      month:'',
+      year:''
+    },
+    area:'',
+    desc1:'',
+    images:[]
+  }
+]
+
+export const team={
+  
+}

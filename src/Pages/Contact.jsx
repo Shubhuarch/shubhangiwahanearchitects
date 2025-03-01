@@ -58,7 +58,7 @@ const Contact = () => {
       {/* <button onClick={()=>{toast.success("Message sent successfully!");}} >check</button> */}
       <div className="w-full mx-auto flex justify-evenly flex-col md:flex-row">
         <div className="md:w-[45%] flex flex-col">
-          <h1>We would love to hear from you!</h1>
+          <h1 className="md:text-[1.5rem]">We would love to hear from you!</h1>
           <p>Email: {process.env.REACT_APP_EMAIL}</p>
           <p>Phone or WhatsApp: {process.env.REACT_APP_PHONE}</p>
           <form onSubmit={handleSubmit} className="space-y-4 md:w-full">
