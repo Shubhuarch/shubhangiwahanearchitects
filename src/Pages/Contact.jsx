@@ -104,8 +104,8 @@ const Contact = () => {
             <h1 className="md:text-[1.5rem]">
               We would love to hear from you!
             </h1>
-            <p>Email: {process.env.REACT_APP_EMAIL}</p>
-            <p>Phone or WhatsApp: {process.env.REACT_APP_PHONE}</p>
+            <p>Email: shubhangiwahanearchitects@gmail.com</p>
+            <p>Phone or WhatsApp: +91 7738700860</p>
             <form onSubmit={handleSubmit} className="space-y-4 md:w-full">
               <div className="">
                 <label htmlFor="name" className="mb-1 font-medium flex">
