@@ -56,8 +56,8 @@ const Contact = () => {
     <div className="container mx-auto px-4 py-8 w-full">
       <h1 className="font-bold mb-6 text-center">Contact Us</h1>
       {/* <button onClick={()=>{toast.success("Message sent successfully!");}} >check</button> */}
-      <div className="w-full mx-auto flex justify-evenly flex-col md:flex-row">
-        <div className="md:w-[45%] flex flex-col">
+      <div className="w-full mx-auto flex justify-center ml-[10vh] flex-col">
+        <div className="md:w-[50%] flex flex-col ">
           <h1 className="md:text-[1.5rem]">We would love to hear from you!</h1>
           <p>Email: {process.env.REACT_APP_EMAIL}</p>
           <p>Phone or WhatsApp: {process.env.REACT_APP_PHONE}</p>

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Blogs = () => {
+const Careers = () => {
   return (
     <div className='mt-[10vh]'>Comming Soon</div>
   )
 }
 
-export default Blogs
+export default Careers

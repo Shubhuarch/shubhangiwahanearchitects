@@ -50,7 +50,17 @@ const Navbar = () => {
         {/* Links */}
         <div className="flex justify-center mt-[8vh]">
           <ul className=" w-[90%] text-left space-y-4 ">
+          <li className="hover:bg-green-100">
+              
+              <Link
+                to="/"
+                className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
+              >
+                Home
+              </Link>
+            </li>
             <li className="hover:bg-green-100">
+              
               <Link
                 to="/work"
                 className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
@@ -76,7 +86,7 @@ const Navbar = () => {
             </li>
             <li className="hover:bg-green-100">
               <Link
-                to="/"
+                to="/careers"
                 className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
               >
                 Careers
@@ -103,15 +113,17 @@ const Navbar = () => {
 
         {/* works filter */}
         <div className="flex w-full flex-col mt-[8vh]">
-          <p className="text-sm text-left text-gray-400 mb-2 ml-2">Works Filter</p>
+          <p className="text-sm text-left text-gray-400 mb-2 ml-2">
+            Works Filter
+          </p>
           <div className="flex justify-center">
             <ul className=" w-[90%] text-left space-y-1 ">
               <li className="hover:bg-green-100">
                 <Link
-                  to="/"
+                  onClick={toggleModal}
                   className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
                 >
-                  Work
+                  Book a Consultation
                 </Link>
               </li>
               <li className="hover:bg-green-100">
@@ -119,7 +131,7 @@ const Navbar = () => {
                   to="/"
                   className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
                 >
-                  About
+                  AI Corner
                 </Link>
               </li>
               <li className="hover:bg-green-100">
@@ -127,7 +139,7 @@ const Navbar = () => {
                   to="/team"
                   className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
                 >
-                  Team
+                  Interior Design
                 </Link>
               </li>
               <li className="hover:bg-green-100">
@@ -158,6 +170,27 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+      <div>
+          {isModalOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+              <div className="bg-white p-4 rounded-lg w-3/4 h-3/4 relative">
+                <button
+                  className="absolute top-2 right-2 text-xl font-bold"
+                  onClick={toggleModal}
+                >
+                  &times;
+                </button>
+                <iframe
+                  src="https://calendly.com/shubhangiwahane/free-vastu-consultation-call"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                ></iframe>
+              </div>
+            </div>
+          )}
+        </div>
     </div>
   );
 };

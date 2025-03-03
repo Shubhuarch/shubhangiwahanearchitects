@@ -12,6 +12,7 @@ import Chat from "./Components/Chat";
 import Work from "./Pages/Work";
 import Team from "./Pages/Team";
 import Blogs from "./Pages/Blogs";
+import Careers from "./Pages/Careers";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
                 <Route path="/work" element={<Work />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/blogs" element={<Blogs />} />
+                <Route path="/careers" element={<Careers />} />
               </Routes>
             </div>
           </div>
