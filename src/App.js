@@ -11,6 +11,7 @@ import Contact from "./Pages/Contact";
 import Chat from "./Components/Chat";
 import Work from "./Pages/Work";
 import Team from "./Pages/Team";
+import Blogs from "./Pages/Blogs";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/work" element={<Work />} />
                 <Route path="/team" element={<Team />} />
+                <Route path="/blogs" element={<Blogs />} />
               </Routes>
             </div>
           </div>

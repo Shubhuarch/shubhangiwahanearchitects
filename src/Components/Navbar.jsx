@@ -68,7 +68,7 @@ const Navbar = () => {
             </li>
             <li className="hover:bg-green-100">
               <Link
-                to="/"
+                to="/team"
                 className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
               >
                 Team
@@ -84,7 +84,7 @@ const Navbar = () => {
             </li>
             <li className="hover:bg-green-100">
               <Link
-                to="/"
+                to="/contact"
                 className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
               >
                 Contact
@@ -92,7 +92,7 @@ const Navbar = () => {
             </li>
             <li className="hover:bg-green-100">
               <Link
-                to="/"
+                to="/blogs"
                 className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
               >
                 Blogs
