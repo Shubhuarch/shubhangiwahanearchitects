@@ -53,12 +53,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 w-full">
-      <h1 className="font-bold mb-6 text-center">Contact Us</h1>
+    <div className="container mx-auto md:px-4 md:py-8 w-full md:mt-0 mt-[5vh]">
+      <h1 className="md:mb-6 text-left pl-10 text-[2rem]">Contact Us</h1>
       {/* <button onClick={()=>{toast.success("Message sent successfully!");}} >check</button> */}
-      <div className="w-full mx-auto flex justify-center ml-[10vh] flex-col">
-        <div className="md:w-full p-4 mt-2 md:mt-0 md:bg-opacity-50 rounded-2xl flex justify-evenly items-center">
-          <div className="w-[45%]">
+      <div className="w-full md:mx-auto flex justify-center items-center md:ml-[10vh] flex-col">
+        <div className="md:w-full md:p-4 mt-2 md:mt-0 md:bg-opacity-50 md:rounded-2xl bg-gr md:flex md:flex-row flex flex-col md:justify-evenly items-center ">
+          <div className="md:w-[45%] w-[90%] ">
             <h1 className="md:text-[2rem] text-left mb-2">
               Shubhangi Wahane Architects
             </h1>
@@ -67,7 +67,7 @@ const Contact = () => {
               opportunities via the contact information provided.
             </div>
 
-            <div className="md:w-[70%] mt-10">
+            {/* <div className="md:w-[70%] mt-10">
               <div className="w-full flex m-2">
                 <FaPhoneAlt /> <p className="pl-2">+91 7738700860</p>{" "}
               </div>
@@ -82,9 +82,9 @@ const Contact = () => {
                   Nagpur, Maharashtra 440001
                 </p>{" "}
               </div>
-            </div>
+            </div> */}
           </div>
-          <div className="w-[45%]">
+          <div className="md:w-[45%] w-[90%]">
             <div className="mt-6">
               <iframe
                 title="Google Map"
@@ -99,7 +99,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-evenly">
+        <div className="md:flex md:flex-row md:justify-evenly md:w-full w-[90%] flex flex-col">
           <div className="md:w-[45%] flex flex-col mt-10 ">
             <h1 className="md:text-[1.5rem]">
               We would love to hear from you!
@@ -171,7 +171,7 @@ const Contact = () => {
               </div>
             </form>
           </div>
-          <div className="w-[45%] mt-4">
+          <div className="md:w-[45%] w-full md:mb-0 mb-4 mt-4">
             <a
               href="https://wa.me/917738700860?text=Hello%20Shubhangi%20Wahane%20Architects%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
               target="_blank"

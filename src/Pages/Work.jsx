@@ -13,17 +13,17 @@ const Work = () => {
         <h1>Our Recent Works</h1>
       </div>
       <h1 className="mt-10 mb-10">DESIGN ONE</h1>
-      <div className="flex flex-wrap w-full justify-evenly h-[100vh]">
+      <div className="flex flex-wrap w-full justify-evenly h-[70vh] md:h-[100vh]">
         {ourWork.map((work, i) => (
           <motion.div
             key={i}
-            className="w-[30%] h-[30vh] relative group overflow-hidden"
+            className="w-[30%] md:h-[30%] h-[20vh] relative group overflow-hidden bg-red-500"
             initial="hidden"
             animate="visible"
             variants={cardVariants}
             transition={{ delay: i * 0.2 }} // Staggered animation
           >
-            <div className="w-full md:w-full h-full relative bg-red-500 hover:cursor-pointer">
+            <div className="w-full md:w-full h-full md:h-full relative bg-red-500 hover:cursor-pointer">
               <img
                 src={work.tile_image}
                 alt=""
@@ -45,17 +45,17 @@ const Work = () => {
       <h1 className="mt-10 mb-10">DESIGN TWO</h1>
 
       <div>
-        <div className="flex flex-wrap w-full justify-evenly ">
+        <div className="md:flex md:flex-row flex flex-col items-center md:flex-wrap w-full justify-center md:justify-evenly ">
           {ourWork2.map((work, i) => (
             <motion.div
               key={i}
-              className="w-[45%] h-[80vh] relative group overflow-hidden mt-2 mb-2"
+              className="md:w-[45%] w-[95%] flex justify-center h-[80vh] relative group overflow-hidden mt-2 mb-2"
               initial="hidden"
               animate="visible"
               variants={cardVariants}
               transition={{ delay: i * 0.2 }} // Staggered animation
             >
-              <div className="w-full md:w-full h-full relative bg-red-500 hover:cursor-pointer">
+              <div className="w-full md:w-full h-full relative hover:cursor-pointer">
                 <img
                   src={work.tile_image}
                   alt=""

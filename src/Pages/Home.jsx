@@ -22,7 +22,7 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-[#ebeae6] w-full">
+    <div className="bg-[#ebeae6] w-full mt-[5vh]">
       <Slidebar />
 
       <DataPage />

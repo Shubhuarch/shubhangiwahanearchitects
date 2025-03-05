@@ -8,13 +8,20 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Components/Navbar";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import { Link } from "react-router-dom";
 import Chat from "./Components/Chat";
 import Work from "./Pages/Work";
 import Team from "./Pages/Team";
 import Blogs from "./Pages/Blogs";
 import Careers from "./Pages/Careers";
-
+import { IoClose } from "react-icons/io5";
+import { FiMenu } from "react-icons/fi";
+import React, { useState, useRef, useEffect } from "react";
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <Router>
       <ToastContainer
@@ -29,13 +36,80 @@ function App() {
         pauseOnHover
         theme="light"
       />
+      {/* Mobile Menu Button */}
+      <div className="md:hidden flex  fixed top-0 left-0 w-full h-[5vh] z-[1050] bg-white">
+        <button
+          onClick={toggleNavbar}
+          className="text-black text-[1.5rem] z-[1051] ml-1"
+        >
+          <FiMenu />
+        </button>
+      </div>
+
+      {/* Sidebar with Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-[1049]"
+          onClick={toggleNavbar}
+        ></div>
+      )}
+
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out md:hidden z-[1051]`}
+      >
+        <button
+          className="absolute top-4 right-4 text-3xl z-[1052]"
+          onClick={toggleNavbar}
+        >
+          <IoClose />
+        </button>
+        <ul className="mt-16 space-y-4 p-4">
+          <li>
+            <Link to="/" className="text-black" onClick={toggleNavbar}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/work" className="text-black" onClick={toggleNavbar}>
+              Work
+            </Link>
+          </li>
+          <li>
+            <Link to="/about-us" className="text-black" onClick={toggleNavbar}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/team" className="text-black" onClick={toggleNavbar}>
+              Team
+            </Link>
+          </li>
+          <li>
+            <Link to="/careers" className="text-black" onClick={toggleNavbar}>
+              Careers
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="text-black" onClick={toggleNavbar}>
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/blogs" className="text-black" onClick={toggleNavbar}>
+              Blogs
+            </Link>
+          </li>
+        </ul>
+      </div>
+
       <div className="w-full flex justify-center ">
-        <div className="App flex w-[80%] justify-center">
+        <div className="App flex md:w-[80%] justify-center ">
           {/* Sidebar / Navbar with fixed width */}
-          <div className="w-[20%]">
+          <div className="md:w-[20%] hidden md:flex">
             <Navbar />
           </div>
-
           {/* Main Content Area (flex-grow to take remaining space) */}
           <div className=" flex flex-grow w-[50%] flex-col">
             <div className="w-full">

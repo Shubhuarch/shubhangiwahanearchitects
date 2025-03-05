@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import { HiChatBubbleLeftRight } from "react-icons/hi2";
 import { BsFillSendFill } from "react-icons/bs";
@@ -45,13 +46,20 @@ const Chat = () => {
       className="fixed bottom-4 right-4 flex flex-col items-end z-50 rounded-3xl"
     >
       {isChatOpen && (
-        <div className="bg-white rounded-lg shadow-2xl mb-4 w-64 md:h-[80vh] md:w-[50vh] flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 0.3 }}
+          className="bg-white rounded-lg shadow-2xl mb-4 w-[50vh] md:h-[80vh] md:w-[50vh] flex flex-col items-center"
+        >
           <div className="bg-slate-500 bg-opacity-45 p-4 h-[10%] flex rounded-t-2xl w-full">
             <h1 className="font-bold">SHUBHANGI</h1>
           </div>
           <div className="relative bottom-4 rounded-lg bg-slate-100 w-[80%] p-4">
             <div>
-              Hi! We at 'COMPANY Name' Believe that Architecture is you,
+              Hi! We at Shubhangi Wahane Architects Believe that Architecture is
+              you,
             </div>
             <form onSubmit={handleSubmit} className="mt-4">
               <div className="mb-3">
@@ -67,7 +75,7 @@ const Chat = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full bg-slate-100   border-b border-gray-500 shadow-sm focus:border-indigo-300 focus:ring  focus:outline-none focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="mt-1 block w-full bg-slate-100 border-b border-gray-500 shadow-sm focus:border-indigo-300 focus:ring focus:outline-none focus:ring-indigo-200 focus:ring-opacity-50"
                   required
                 />
               </div>
@@ -84,7 +92,7 @@ const Chat = () => {
                   name="number"
                   value={formData.number}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full bg-slate-100 border-b border-gray-500 shadow-sm focus:border-indigo-300 focus:ring  focus:outline-none focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="mt-1 block w-full bg-slate-100 border-b border-gray-500 shadow-sm focus:border-indigo-300 focus:ring focus:outline-none focus:ring-indigo-200 focus:ring-opacity-50"
                   required
                 />
               </div>
@@ -101,7 +109,7 @@ const Chat = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows="3"
-                  className="mt-1 block w-full bg-slate-100   border-b border-gray-500 shadow-sm focus:border-indigo-300 focus:ring  focus:outline-none focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="mt-1 block w-full bg-slate-100 border-b border-gray-500 shadow-sm focus:border-indigo-300 focus:ring focus:outline-none focus:ring-indigo-200 focus:ring-opacity-50"
                   required
                 ></textarea>
               </div>
@@ -109,18 +117,23 @@ const Chat = () => {
                 type="submit"
                 className="w-full flex items-center md:w-[27%] justify-between bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
-                Send <BsFillSendFill  className="pl-1"/>
+                Send <BsFillSendFill className="pl-1" />
               </button>
             </form>
           </div>
-        </div>
+        </motion.div>
       )}
-      <div
+
+      <motion.div
         className="text-[3rem] md:text-[4rem] cursor-pointer"
         onClick={() => setIsChatOpen(!isChatOpen)}
+        animate={{ scale: [1, 1.2, 1] }} // Scale animation
+        transition={{ duration: 0.2, ease: "easeInOut", repeat: 1 }} // Bouncy effect
+        whileHover={{ scale: 1.1, rotate: 10 }} // Hover effect
+        whileTap={{ scale: 0.9 }} // Click effect
       >
         <HiChatBubbleLeftRight />
-      </div>
+      </motion.div>
     </div>
   );
 };

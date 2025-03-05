@@ -6,7 +6,7 @@ const Team = () => {
     <div>
       <h1 className="text-left text-[3rem] mt-4">Our Team</h1>
       <div className="m-2 mt-5 mb-5">
-        <p className="text-left">
+        <p className="text-left md:text-[1rem] text-[0.7rem] m-1">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
           orci nec felis sollicitudin commodo. Donec at arcu id nunc bibendum
           tristique. Curabitur consectetur, ipsum eget feugiat suscipit, justo
@@ -22,7 +22,7 @@ const Team = () => {
         </p>
       </div>
 
-      <div className="w-full h-[60vh]">
+      <div className="w-full md:h-[60vh] md:m-0">
         <img
           src="https://img.freepik.com/free-photo/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working_146671-13569.jpg"
           className="h-full w-full"
@@ -38,7 +38,7 @@ const Team = () => {
             key={i}
             className="flex flex-col items-center m-2 w-[80%] md:w-[20%]"
           >
-            <div className="w-full p-2 h-[50vh] md:h-[20vh] m-2 flex justify-center ">
+            <div className="w-full p-2 h-[20vh] md:h-[20vh] m-2 flex justify-center ">
               {/* Image Wrapper with Group */}
               <div className="relative group">
                 {/* Profile Image */}
