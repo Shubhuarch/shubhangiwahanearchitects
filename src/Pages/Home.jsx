@@ -9,6 +9,7 @@ import { IoClose } from "react-icons/io5";
 import CompletedProject from "./CompletedProject";
 import Footer from "../Components/Footer";
 import FeatureWork from "./featured";
+import TestimonialSection from "./Testimonials";
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBoxOpen, setIsBoxOpen] = useState(true);
@@ -22,12 +23,13 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-[#ebeae6] w-full mt-[5vh]">
+    <div className="bg-[#ebeae6] w-full mt-[2vh]">
       <Slidebar />
 
       <DataPage />
+      <TestimonialSection />
       <CompletedProject />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       
       <div className="h-[20vh]"></div>
 

@@ -3,230 +3,146 @@ import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-
-// Custom hook to handle clicks outside of the specified element
-const useOutsideClick = (callback) => {
-  const ref = useRef();
-
-  useEffect(() => {
-    const handleClick = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
-        callback();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
-  }, [callback]);
-
-  return ref;
-};
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
 
-  const handleClickOutside = () => {
-    if (isMenuOpen) setIsMenuOpen(false);
-  };
-
-  const menuRef = useOutsideClick(handleClickOutside);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleNavbar = () => setIsOpen(!isOpen);
+  const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
-    <div className="hidden md:flex sticky top-0 left-0 h-[15vh] md:h-[100vh] w-full bg-white-500 z-50">
-      <div>
-        <div>
-          <div className="w-[80%] mt-2 flex justify-center">
-            <img src={logo} alt="logo" />
+    <div className="hidden md:flex justify-between sticky top-0 left-0 h-[15vh] w-full bg-white-500 z-50">
+      <div className="flex w-full h-full justify-between">
+        <div className="flex items-center justify-between h-full w-full">
+          <div className="w-[14%] h-full flex items-center pl-[7vh]">
+            <motion.img
+              src={logo}
+              alt="logo"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            />
           </div>
 
-          {/* Links */}
-          <div className="flex justify-center mt-[8vh]">
-            <ul className=" w-[90%] text-left space-y-4 ">
+          {/* Navigation Links */}
+          <div className="flex w-[65%] items-center h-full justify-center">
+            <ul className="flex justify-evenly items-center w-[100%] text-left text-[1rem] uppercase">
               <li className="hover:bg-gray-50">
                 <Link
                   to="/"
-                  className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
+                  className="text-[#584039] font-semibold hover:text-[#C89A74]"
                 >
                   Home
                 </Link>
               </li>
-              <li className="hover:hover:bg-gray-50">
+
+              {/* Portfolio Dropdown */}
+              <li
+                className="relative hover:bg-gray-50"
+                onMouseEnter={() => setIsPortfolioOpen(true)}
+                onMouseLeave={() => setIsPortfolioOpen(false)}
+              >
                 <Link
-                  to="/work"
-                  className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
+                 
+                  className="text-[#584039] font-semibold hover:text-[#C89A74]"
                 >
-                  Work
+                  Portfolio
                 </Link>
+                {/* Dropdown Menu */}
+                {isPortfolioOpen && (
+                  <ul className="absolute left-0 right-2 mt-0 w-48 bg-white bg-opacity-30  shadow-lg   uppercase text-[1rem] ">
+                    <li className="p-2 hover:bg-gray-100">
+                      <Link to="/architecture" className="text-black">
+                        Architecture
+                      </Link>
+                    </li>
+                    <li className="p-2 hover:bg-gray-100">
+                      <Link to="/interior-design" className="text-black">
+                        Interior Design
+                      </Link>
+                    </li>
+                    <li className="p-2 hover:bg-gray-100">
+                      <Link to="/town-planning" className="text-black">
+                        Town Planning
+                      </Link>
+                    </li>
+                  </ul>
+                )}
               </li>
-              <li className="hover:hover:bg-gray-50">
+
+              <li className="hover:bg-gray-50">
                 <Link
                   to="/about-us"
-                  className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
+                  className="text-[#584039] font-semibold hover:text-[#C89A74]"
                 >
                   About
                 </Link>
               </li>
-              <li className="hover:hover:bg-gray-50">
-                <Link
-                  to="/team"
-                  className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
-                >
-                  Team
-                </Link>
-              </li>
-              <li className="hover:hover:bg-gray-50">
-                <Link
-                  to="/careers"
-                  className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li className="hover:hover:bg-gray-50">
+
+              <li className="hover:bg-gray-50">
                 <Link
                   to="/contact"
-                  className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
+                  className="text-[#584039] font-semibold hover:text-[#C89A74]"
                 >
                   Contact
                 </Link>
               </li>
-              <li className="hover:hover:bg-gray-50">
+
+              <li className="hover:bg-gray-50">
                 <Link
                   to="/blogs"
-                  className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
+                  className="text-[#584039] font-semibold hover:text-[#C89A74]"
                 >
                   Blogs
                 </Link>
               </li>
+
+              <li className="hover:bg-gray-50">
+                <Link
+                  to="/ai-corner"
+                  className="text-[#584039] font-semibold hover:text-[#C89A74]"
+                >
+                  AI Corner
+                </Link>
+              </li>
+
+              <li className="hover:bg-gray-50 border-2 border-[#C89A74] p-2">
+                <Link
+                  to="/book-consultation"
+                  onClick={toggleModal}
+                  className="hover:text-[#584039] font-semibold text-[#C89A74]"
+                >
+                  Book A Consultation
+                </Link>
+              </li>
             </ul>
           </div>
+        </div>
 
-          {/* works filter */}
-          <div className="flex w-full flex-col mt-[8vh]">
-            <p className="text-sm text-left text-gray-400 mb-2 ml-2">
-              Works Filter
-            </p>
-            <div className="flex justify-center">
-              <ul className=" w-[90%] text-left space-y-1 ">
-                <li className="hover:hover:bg-gray-50">
-                  <Link
-                    onClick={toggleModal}
-                    className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
-                  >
-                    Book a Consultation
-                  </Link>
-                </li>
-                <li className="hover:hover:bg-gray-50">
-                  <Link
-                    to="/"
-                    className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
-                  >
-                    AI Corner
-                  </Link>
-                </li>
-                <li className="hover:hover:bg-gray-50">
-                  <Link
-                    to="/team"
-                    className="text-[#584039] text-sm font-semibold hover:text-[#C89A74] p-2 m-2"
-                  >
-                    Interior Design
-                  </Link>
-                </li>
-              </ul>
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+            <div className="bg-white p-4 rounded-lg w-3/4 h-3/4 relative">
+              <button
+                className="absolute top-2 right-2 text-xl font-bold"
+                onClick={toggleModal}
+              >
+                &times;
+              </button>
+              <iframe
+                src="https://calendly.com/shubhangiwahane/free-vastu-consultation-call"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+              ></iframe>
             </div>
           </div>
-        </div>
-
-        <div>
-          {isModalOpen && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-              <div className="bg-white p-4 rounded-lg w-3/4 h-3/4 relative">
-                <button
-                  className="absolute top-2 right-2 text-xl font-bold"
-                  onClick={toggleModal}
-                >
-                  &times;
-                </button>
-                <iframe
-                  src="https://calendly.com/shubhangiwahane/free-vastu-consultation-call"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                ></iframe>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className="md:hidden flex justify-between items-center bg-red-400">
-        <img src="logo.png" alt="Logo" className="w-16" />
-        <button onClick={toggleNavbar} className="text-black text-3xl">
-          <FiMenu />
-        </button>
-      </div>
-
-      {/* Sliding Sidebar */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out md:hidden z-50`}
-      >
-        <button
-          className="absolute top-4 right-4 text-3xl"
-          onClick={toggleNavbar}
-        >
-          <IoClose />
-        </button>
-        <ul className="mt-16 space-y-4 p-4">
-          <li>
-            <Link to="/" className="text-black" onClick={toggleNavbar}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/work" className="text-black" onClick={toggleNavbar}>
-              Work
-            </Link>
-          </li>
-          <li>
-            <Link to="/about-us" className="text-black" onClick={toggleNavbar}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/team" className="text-black" onClick={toggleNavbar}>
-              Team
-            </Link>
-          </li>
-          <li>
-            <Link to="/careers" className="text-black" onClick={toggleNavbar}>
-              Careers
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="text-black" onClick={toggleNavbar}>
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link to="/blogs" className="text-black" onClick={toggleNavbar}>
-              Blogs
-            </Link>
-          </li>
-        </ul>
+        )}
       </div>
     </div>
   );

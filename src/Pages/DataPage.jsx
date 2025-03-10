@@ -1,5 +1,6 @@
 import React from "react";
 import { data } from "../Utils/boxPhoto";
+import HowItWorks from "./HowItWorks";
 
 const DataPage = () => {
   return (
@@ -15,9 +16,9 @@ const DataPage = () => {
       {/* OLD design */}
       <div className="hidden md:flex flex-wrap justify-evenly  mt-[6vh] w-full ">
         {data.map((info, i) => (
-          <div className="hidden md:flex flex-col w-[25%] md:w-[18%] mt-2 ">
-            <div className="w-[full] h-[10vh] md:h-[20vh] bg-red-300 m-2">
-              <img src={info.img} className="h-full w-full" />
+          <div className="hidden md:flex flex-col w-[25%] md:w-[22%] mt-2 ">
+            <div className="w-[full] h-[10vh] md:h-[40vh] bg-red-300 m-2">
+              <img src={info.img} className="h-full w-full " />
             </div>
             <div className=" md:mt-[6vh] text-[0.7rem] text-[#584039] md:text-[1.2rem]">
               {info.title}
@@ -26,28 +27,40 @@ const DataPage = () => {
           </div>
         ))}
       </div>
+      <HowItWorks />
 
-      <h1>New Design</h1>
-      <div className="hidden md:flex flex-wrap justify-evenly mt-[6vh] w-full">
-  {data.map((info, i) => (
-    <div 
-      key={i} 
-      className={`flex h-[40vh] justify-evenly w-full mt-2 ${i % 2 !== 0 ? 'flex-row-reverse' : ''}`}
-    >
-      <div className="w-[30%] h-full">
-        <div className="w-full h-[80%] bg-red-300 m-2">
-          <img src={info.img} className="h-full w-full" alt={info.title} />
-        </div>
-        <div className="w-full text-[1.2rem]">
-          {info.title}
-        </div>
+      <div className="text-[#584039] mt-[9vh] mb-[5vh] text-[2rem] font-cormorant">
+        Our Services
       </div>
-      <div className="mt-[4vh] w-[65%] text-black text-[1rem]">
-        {info.info}
+      {/* <h1>New Design</h1> */}
+      <div className="hidden md:flex flex-wrap justify-center  w-full">
+        {data.map((info, i) => (
+          <div
+            key={i}
+            className={`flex h-[60vh] justify-evenly w-[89%] mt-2 ${
+              i % 2 !== 0 ? "flex-row-reverse" : ""
+            }`}
+          >
+            <div className="w-[30%] h-full">
+              <div className="w-full h-[80%] bg-red-300 m-2">
+                <img
+                  src={info.img}
+                  className="h-full w-full"
+                  alt={info.title}
+                />
+              </div>
+              <div className="w-full text-[1.2rem]">{info.title}</div>
+            </div>
+            <div
+              className={`mt-[4vh]  w-[65%] text-black text-[1rem] ${
+                i % 2 === 0 ? "text-left pl-4" : "text-right pr-4"
+              }`}
+            >
+              {info.info}
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
 
       {/* mobile view */}
       <div className="md:hidden flex  flex-wrap justify-evenly mt-[6vh] w-full">

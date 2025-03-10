@@ -17,6 +17,9 @@ import Careers from "./Pages/Careers";
 import { IoClose } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
 import React, { useState, useRef, useEffect } from "react";
+import Architecture from "./Pages/Architecture";
+import InteriorDesign from "./Pages/InteriorDesign";
+import TownPlanning from "./Pages/TownPlanning";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => {
@@ -105,14 +108,14 @@ function App() {
       </div>
 
       <div className="w-full flex justify-center ">
-        <div className="App flex md:w-[80%] justify-center ">
+        <div className="App w-full flex-col items-center justify-center ">
           {/* Sidebar / Navbar with fixed width */}
-          <div className="md:w-[20%] hidden md:flex">
+          <div className="w-full hidden md:flex ">
             <Navbar />
           </div>
           {/* Main Content Area (flex-grow to take remaining space) */}
-          <div className=" flex flex-grow w-[50%] flex-col">
-            <div className="w-full">
+          <div className=" flex justify-center flex-grow w-full flex-col">
+            <div className="w-full flex justify-center">
               {/* Uncomment Routes when needed */}
               <Routes>
                 <Route path="/*" element={<Home />} />
@@ -122,6 +125,9 @@ function App() {
                 <Route path="/team" element={<Team />} />
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/careers" element={<Careers />} />
+                <Route path="/architecture" element={<Architecture />} />
+                <Route path="/interior-design" element={<InteriorDesign />} />
+                <Route path="/town-planning" element={<TownPlanning />} />
               </Routes>
             </div>
           </div>
