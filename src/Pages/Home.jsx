@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-[#ebeae6] w-full mt-[2vh]">
+    <div className="bg-[#ebeae6] md:w-full mt-[2vh] flex flex-col items-center">
       <Slidebar />
 
       <DataPage />

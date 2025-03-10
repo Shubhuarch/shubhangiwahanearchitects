@@ -4,8 +4,8 @@ import HowItWorks from "./HowItWorks";
 
 const DataPage = () => {
   return (
-    <div className=" mt-[8vh] bg-[#ebeae6] w-full flex flex-col">
-      <h1 className="text-[#584039] text-[2rem] font-cormorant">
+    <div className=" mt-[8vh] bg-[#ebeae6] w-[95%] md:w-full flex flex-col items-center">
+      <h1 className="text-[#584039] flex justify-center text-[1.5rem] md:text-[2rem] font-cormorant">
         A Data-driven and Personalized Service That You Can Trust
       </h1>
       <div className="mt-6 p-1 text-[0.7rem] md:text-[1.2rem]">

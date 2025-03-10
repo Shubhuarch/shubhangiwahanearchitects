@@ -37,47 +37,47 @@ const InteriorDesign = () => {
     ? images[selectedCategory]
     : Object.values(images).flat();
 
-  return (
-    <div className="flex flex-col w-full items-center">
-      <h1 className="text-2xl font-bold uppercase mt-5 font-cormorant">Our Work</h1>
-      <div className="w-[70vh]  mt-5 mb-5">Designing Spaces, Crafting Experiences</div>
-      {/* <h1 className="text-2xl font-bold uppercase mt-5 font-cormorant">Our Work</h1> */}
-      
-      <div className="flex justify-center w-full">
-        <div className="flex w-[50%] mt-10 justify-evenly uppercase">
-          {Object.keys(images).map((category) => (
-            <button
-              key={category}
-              className={`bg-[#A29D8E] w-[48%] flex justify-center items-center text-white uppercase ${
-                selectedCategory === category ? "opacity-80" : "opacity-100"
-              }`}
-              onClick={() => setSelectedCategory(category)}
+    return (
+      <div className="flex flex-col w-full items-center mt-[10vh]  md:mt-[10vh]">
+        <h1 className="text-2xl font-bold uppercase mt-5 font-cormorant">Our Work</h1>
+        <div className="w-[70vh]  mt-5 mb-5">Designing Spaces, Crafting Experiences</div>
+        {/* <h1 className="text-2xl font-bold uppercase mt-5 font-cormorant">Our Work</h1> */}
+        
+        <div className="flex justify-center md:w-full">
+          <div className="flex flex-wrap w-full md:w-[55%] mt-10 justify-evenly uppercase">
+            {Object.keys(images).map((category) => (
+              <button
+                key={category}
+                className={`bg-[#A29D8E] w-[48%] md:w-[48%] flex justify-center m-1 md:m-0 items-center text-white uppercase ${
+                  selectedCategory === category ? "opacity-80" : "opacity-100"
+                }`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+  
+        {/* Image Section */}
+        <div className="flex w-full md:w-[75%]  flex-wrap mt-10 justify-between">
+          {displayedImages.map((item, index) => (
+            <div
+              key={index}
+              className="p-4 w-[95%] md:w-[46%] m-2 mt-10 h-[100vh] transition-transform hover:scale-105"
             >
-              {category}
-            </button>
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-full h-[80%] object-cover"
+              />
+              <h2 className="text-lg font-semibold mt-3">{item.title}</h2>
+              <p className="text-gray-600">{item.desc}</p>
+            </div>
           ))}
         </div>
       </div>
-
-      {/* Image Section */}
-      <div className="flex w-[75%] flex-wrap mt-10 justify-between">
-        {displayedImages.map((item, index) => (
-          <div
-            key={index}
-            className="p-4 w-[46%] m-2 mt-10 h-[100vh] transition-transform hover:scale-105"
-          >
-            <img
-              src={item.img}
-              alt={item.title}
-              className="w-full h-[80%] object-cover"
-            />
-            <h2 className="text-lg font-semibold mt-3">{item.title}</h2>
-            <p className="text-gray-600">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+    );
 };
 
 export default InteriorDesign;

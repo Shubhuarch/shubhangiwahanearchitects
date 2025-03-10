@@ -31,19 +31,19 @@ const testimonials = [
 
 const TestimonialSection = () => {
   return (
-    <section className="py-16">
-      <div className="w-[80%] mx-auto px-6">
+    <section className=" w-full">
+      <div className="w-[80%] mx-auto px-6 ">
         {/* Heading */}
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
           What Our Clients Say
         </h2>
 
         {/* Testimonial Cards */}
-        <div className="flex flex-wrap justify-evenly  w-full">
+        <div className="flex flex-wrap justify-evenly w-full">
           {testimonials.map((testimonial) => (
             <motion.div
               key={testimonial.id}
-              className="max-w-sm bg-white shadow-lg rounded-xl p-6 flex flex-col items-center text-center"
+              className="w-full md:max-w-sm bg-white shadow-lg rounded-xl p-6 m-4 md:m-0 flex flex-col items-center text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}

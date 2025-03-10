@@ -16,7 +16,7 @@ const Navbar = () => {
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
-    <div className="hidden md:flex justify-between sticky top-0 left-0 h-[15vh] w-full bg-white-500 z-50">
+    <div className="hidden md:flex justify-between  top-0 left-0 h-[15vh] w-full bg-white-500 z-50 bg-[#F0EFEC] sticky">
       <div className="flex w-full h-full justify-between">
         <div className="flex items-center justify-between h-full w-full">
           <div className="w-[14%] h-full flex items-center pl-[7vh]">
@@ -47,26 +47,23 @@ const Navbar = () => {
                 onMouseEnter={() => setIsPortfolioOpen(true)}
                 onMouseLeave={() => setIsPortfolioOpen(false)}
               >
-                <Link
-                 
-                  className="text-[#584039] font-semibold hover:text-[#C89A74]"
-                >
+                <Link className="text-[#584039] font-semibold hover:text-[#C89A74]">
                   Portfolio
                 </Link>
                 {/* Dropdown Menu */}
                 {isPortfolioOpen && (
-                  <ul className="absolute left-0 right-2 mt-0 w-48 bg-white bg-opacity-30  shadow-lg   uppercase text-[1rem] ">
-                    <li className="p-2 hover:bg-gray-100">
+                  <ul className="absolute left-0 mt-0 w-[250px] bg-white bg-opacity-30 shadow-lg uppercase text-[1rem]">
+                    <li className="p-2 hover:bg-[#F0EFEC]">
                       <Link to="/architecture" className="text-black">
                         Architecture
                       </Link>
                     </li>
-                    <li className="p-2 hover:bg-gray-100">
+                    <li className="p-2 hover:bg-[#F0EFEC]">
                       <Link to="/interior-design" className="text-black">
                         Interior Design
                       </Link>
                     </li>
-                    <li className="p-2 hover:bg-gray-100">
+                    <li className="p-2 hover:bg-[#F0EFEC]">
                       <Link to="/town-planning" className="text-black">
                         Town Planning
                       </Link>
