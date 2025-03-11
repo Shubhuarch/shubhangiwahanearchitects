@@ -44,11 +44,11 @@ const Architecture = () => {
       {/* <h1 className="text-2xl font-bold uppercase mt-5 font-cormorant">Our Work</h1> */}
       
       <div className="flex justify-center md:w-full">
-        <div className="flex flex-wrap w-full  md:w-[80%] mt-10 justify-evenly uppercase">
+        <div className="flex flex-wrap w-[98%]  md:w-[80%] mt-10 justify-evenly uppercase">
           {Object.keys(images).map((category) => (
             <button
               key={category}
-              className={`bg-[#A29D8E] w-[48%] md:w-[24%] flex justify-center m-1 md:m-0 items-center text-white uppercase ${
+              className={`bg-[#A29D8E] w-[47%] md:w-[24%] text-[0.8rem] md:text-[1rem] flex justify-center m-1 md:m-0 items-center text-white uppercase ${
                 selectedCategory === category ? "opacity-80" : "opacity-100"
               }`}
               onClick={() => setSelectedCategory(category)}
@@ -64,12 +64,12 @@ const Architecture = () => {
         {displayedImages.map((item, index) => (
           <div
             key={index}
-            className="p-4 w-[95%] md:w-[46%] m-2 mt-10 h-[100vh] transition-transform hover:scale-105"
+            className="p-4 w-[95%] md:w-[46%] m-2 mt-10 h-[60vh] md:h-[100vh] transition-transform hover:scale-105"
           >
             <img
               src={item.img}
               alt={item.title}
-              className="w-full h-[80%] object-cover"
+              className="w-full md:h-[80%] object-cover"
             />
             <h2 className="text-lg font-semibold mt-3">{item.title}</h2>
             <p className="text-gray-600">{item.desc}</p>

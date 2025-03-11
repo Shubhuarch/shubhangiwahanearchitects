@@ -48,7 +48,7 @@ const InteriorDesign = () => {
             {Object.keys(images).map((category) => (
               <button
                 key={category}
-                className={`bg-[#A29D8E] w-[48%] md:w-[48%] flex justify-center m-1 md:m-0 items-center text-white uppercase ${
+                className={`bg-[#A29D8E] w-[80%] md:w-[48%] flex justify-center m-1 md:m-0 items-center text-white uppercase ${
                   selectedCategory === category ? "opacity-80" : "opacity-100"
                 }`}
                 onClick={() => setSelectedCategory(category)}
@@ -64,7 +64,7 @@ const InteriorDesign = () => {
           {displayedImages.map((item, index) => (
             <div
               key={index}
-              className="p-4 w-[95%] md:w-[46%] m-2 mt-10 h-[100vh] transition-transform hover:scale-105"
+              className="p-4 w-[95%] md:w-[46%] m-2 mt-10 h-[60vh] md:h-[100vh] transition-transform hover:scale-105"
             >
               <img
                 src={item.img}

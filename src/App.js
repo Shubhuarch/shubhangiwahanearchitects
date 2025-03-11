@@ -21,6 +21,8 @@ import Architecture from "./Pages/Architecture";
 import InteriorDesign from "./Pages/InteriorDesign";
 import TownPlanning from "./Pages/TownPlanning";
 import MobileNavbar from "./Components/MobileNavbar";
+import AiCorner from "./Pages/AiCorner";
+import Navbar2 from "./Components/Navbar2";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => {
@@ -50,6 +52,9 @@ function App() {
           <div className="w-full hidden md:flex ">
             <Navbar />
           </div>
+          {/* <div className="w-full hidden md:flex mt-[15vh]">
+            <Navbar2 />
+          </div> */}
           {/* Main Content Area (flex-grow to take remaining space) */}
           <div className=" flex justify-center flex-grow md:w-full flex-col">
             <div className="w-full flex justify-center">
@@ -65,6 +70,8 @@ function App() {
                 <Route path="/architecture" element={<Architecture />} />
                 <Route path="/interior-design" element={<InteriorDesign />} />
                 <Route path="/town-planning" element={<TownPlanning />} />
+                <Route path="/ai-corner" element={<AiCorner />} />
+                
               </Routes>
             </div>
           </div>

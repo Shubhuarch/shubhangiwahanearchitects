@@ -2,17 +2,19 @@ import React from "react";
 import banner1 from "../assets/banner1.png";
 import Connect from "./Connect";
 import Footer from "../Components/Footer";
+import Footer2 from "../Components/Footer2";
+import Footer3 from "../Components/Footer3";
 
 const About = () => {
   return (
-    <div className="mt-[5vh] md:mt-0 ">
+    <div className=" mt-[3vh] md:mt-0 ">
       <div className="flex md:flex-row flex-col md:items-center items-center justify-center md:justify-between">
-        <div className="md:w-[50%] w-full md:h-[120vh] flex md:justify-start flex-col items-end ">
-          <h1 className="text-left text-[3rem] font-cormorant w-full md:w-[80%] mt-[20vh]">
+        <div className="md:w-[50%] w-full md:h-[120vh] flex md:justify-start flex-col ">
+          <h1 className="text-left text-[3rem] font-cormorant w-full md:w-[80%] mt-10 md:mt-[20vh] ml-3 md:ml-[20vh]">
             ABOUT US
           </h1>
           <br/>
-          <div className="text-left text-[0.8rem] md:text-[1rem] w-[98%] md:w-[80%]">
+          <div className="text-left text-[0.6rem] md:text-[1rem] w-[98%] md:w-[70%] ml-3 md:ml-[20vh]">
             <p>Shubhangi Wahane Architects — Designing Spaces That Inspire.</p>
             <br />
             <p>
@@ -54,7 +56,7 @@ const About = () => {
 
       <Connect />
 
-      <Footer />
+      <Footer2 />
     </div>
   );
 };

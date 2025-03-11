@@ -62,7 +62,7 @@ const TownPlanning = () => {
           {displayedImages.map((item, index) => (
             <div
               key={index}
-              className="p-4 w-[95%] md:w-[46%] m-2 mt-10 h-[100vh] transition-transform hover:scale-105"
+              className="p-4 w-[95%] md:w-[46%] m-2 mt-10 h-[60vh] md:h-[100vh] transition-transform hover:scale-105"
             >
               <img
                 src={item.img}
